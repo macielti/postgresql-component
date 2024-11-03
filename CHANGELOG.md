@@ -5,6 +5,12 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
+## 1.1.0 - 2024-11-03
+
+### Added
+
+- Added `resource-existence-check-interceptor` interceptor.
+
 ## 1.0.0 - 2024-11-03
 
 ### Added

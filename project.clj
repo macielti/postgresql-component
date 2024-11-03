@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/postgresql-component "1.0.0"
+(defproject net.clojars.macielti/postgresql-component "1.1.0"
 
   :description "PostgreSQL Component"
 
@@ -12,6 +12,7 @@
             [lein-shell "0.5.0"]]
 
   :dependencies [[org.clojure/clojure "1.11.1"]
+                 [io.pedestal/pedestal.interceptor "0.7.0"]
                  [com.github.igrishaev/pg2-migration "0.1.18"]
                  [com.github.igrishaev/pg2-core "0.1.18"]
                  [nubank/matcher-combinators "3.9.1"]
