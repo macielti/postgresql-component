@@ -1,8 +1,8 @@
 (ns postgresql-component.interceptors
-  (:require [pg.core :as pg]
+  (:require [io.pedestal.interceptor :as pedestal.interceptor]
+            [pg.core :as pg]
             [pg.pool :as pool]
-            [schema.core :as s]
-            [io.pedestal.interceptor :as pedestal.interceptor]))
+            [schema.core :as s]))
 
 (s/defn http-friendly-exception
   "https://www.baeldung.com/rest-api-error-handling-best-practices"
