@@ -1,11 +1,11 @@
 (ns postgresql-component-test
-  (:require [clojure.test :refer :all]
-            [pg.core :as pg]
-            [pg.pool]
-            [postgresql-component.core :as component.postgresql]
+  (:require [clojure.test :refer [is testing]]
             [integrant.core :as ig]
             [java-time.api :as jt]
             [matcher-combinators.test :refer [match?]]
+            [pg.core :as pg]
+            [pg.pool]
+            [postgresql-component.core :as component.postgresql]
             [schema.test :as s])
   (:import (org.pg Pool)))
 

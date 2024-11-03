@@ -1,8 +1,8 @@
 (ns postgresql-component.core
   (:require [integrant.core :as ig]
             [pg.migration.core :as mig]
-            [taoensso.timbre :as log]
-            [pg.pool]))
+            [pg.pool]
+            [taoensso.timbre :as log]))
 
 (defmethod ig/init-key ::postgresql
   [_ {:keys [components]}]
