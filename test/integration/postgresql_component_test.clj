@@ -9,7 +9,7 @@
             [schema.test :as s])
   (:import (org.pg Pool)))
 
-(def config {::component.postgresql/postgresql {:components {:config {:postgresql {:host     "0.0.0.0"
+(def config {::component.postgresql/postgresql {:components {:config {:postgresql {:host     "localhost"
                                                                                    :port     5432
                                                                                    :user     "postgres"
                                                                                    :password "root"
