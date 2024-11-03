@@ -27,18 +27,22 @@
 
                    :injections     [(require 'hashp.core)]
 
-                   :aliases        {"clean-ns"     ["clojure-lsp" "clean-ns" "--dry"] ;; check if namespaces are clean
-                                    "format"       ["clojure-lsp" "format" "--dry"] ;; check if namespaces are formatted
-                                    "diagnostics"  ["clojure-lsp" "diagnostics"]
-                                    "lint"         ["do" ["clean-ns"] ["format"] ["diagnostics"]]
-                                    "clean-ns-fix" ["clojure-lsp" "clean-ns"]
-                                    "format-fix"   ["clojure-lsp" "format"]
-                                    "lint-fix"     ["do" ["clean-ns-fix"] ["format-fix"]]
-                                    "outdated"     ["with-profile" "antq" "run" "-m" "antq.core"]
-                                    "auto-test"    ["do"
-                                                    ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
-                                                    ["test"]
-                                                    ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "down"]]}
+                   :aliases        {"clean-ns"         ["clojure-lsp" "clean-ns" "--dry"] ;; check if namespaces are clean
+                                    "format"           ["clojure-lsp" "format" "--dry"] ;; check if namespaces are formatted
+                                    "diagnostics"      ["clojure-lsp" "diagnostics"]
+                                    "lint"             ["do" ["clean-ns"] ["format"] ["diagnostics"]]
+                                    "clean-ns-fix"     ["clojure-lsp" "clean-ns"]
+                                    "format-fix"       ["clojure-lsp" "format"]
+                                    "lint-fix"         ["do" ["clean-ns-fix"] ["format-fix"]]
+                                    "outdated"         ["with-profile" "antq" "run" "-m" "antq.core"]
+                                    "auto-test"        ["do"
+                                                        ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
+                                                        ["test"]
+                                                        ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "down"]]
+                                    "auto-test-remote" ["do"
+                                                        ["shell" "docker" "compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
+                                                        ["test"]
+                                                        ["shell" "docker" "compose" "-f" "test/resources/docker-compose.yml" "down"]]}
                    :repl-options   {:init-ns postgresql-component.core}}}
 
   :repl-options {:init-ns postgresql-component.core}
