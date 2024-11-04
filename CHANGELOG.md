@@ -5,6 +5,13 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
+## 2.1.1 - 2024-11-03
+
+### Removed
+
+- Removed integration with migrations tooling while starting the application PostgreSQL Integrant Component. This should
+  be handled outside the application.
+
 ## 1.1.0 - 2024-11-03
 
 ### Added
