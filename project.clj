@@ -37,7 +37,7 @@
                                     "clean-ns-fix"     ["clojure-lsp" "clean-ns"]
                                     "format-fix"       ["clojure-lsp" "format"]
                                     "lint-fix"         ["do" ["clean-ns-fix"] ["format-fix"]]
-                                    "migrate-all"      ["run" "-m" "pg.migration.cli" "-c" "resources/migration.config.edn" "migrate" "--all"]
+                                    "migrate-all"      ["run" "-m" "pg.migration.cli" "-c" "test/resources/migration.config.edn" "migrate" "--all"]
                                     "auto-test"        ["do"
                                                         ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
                                                         ["migrate-all"]
