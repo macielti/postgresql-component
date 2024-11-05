@@ -2,6 +2,17 @@
 
 PostgreSQL Component is a library that provides a PostgreSQL component for use with the Integrant library.
 
+## Dealing with migrations
+
+This library does not provide any integration with migrations tooling. You should handle the migrations outside the
+application. You should use [pg2 migrations tooling](https://github.com/igrishaev/pg2/blob/master/docs/migrations.md) or any other tooling that you prefer.
+
+## Executing tests
+
+To run the tests for this library, you need to have a Docker environment running.
+
+```lein run auto-test``` or ```lein run auto-test-remote ```
+
 ## License
 
 Copyright © 2024 Bruno do Nascimento Maciel
