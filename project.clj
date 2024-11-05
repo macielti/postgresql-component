@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/postgresql-component "2.1.1"
+(defproject net.clojars.macielti/postgresql-component "2.1.2"
 
   :description "PostgreSQL Component"
 
@@ -13,20 +13,19 @@
 
   :dependencies [[org.clojure/clojure "1.12.0"]
                  [io.pedestal/pedestal.interceptor "0.7.2"]
-                 [com.github.igrishaev/pg2-migration "0.1.19"]
                  [com.github.igrishaev/pg2-core "0.1.19"]
-                 [nubank/matcher-combinators "3.9.1"]
                  [com.taoensso/timbre "6.6.1"]
-                 [clojure.java-time "1.4.2"]
-                 [prismatic/schema "1.4.1"]
-                 [integrant "0.13.1"]
-                 [hashp "0.2.2"]]
+                 [integrant "0.13.1"]]
 
   :profiles {:dev {:resource-paths ^:replace ["test/resources"]
 
                    :test-paths     ^:replace ["test/unit" "test/integration" "test/helpers"]
 
-                   :dependencies   [[com.github.igrishaev/pg2-migration "0.1.18"]]
+                   :dependencies   [[com.github.igrishaev/pg2-migration "0.1.18"]
+                                    [nubank/matcher-combinators "3.9.1"]
+                                    [prismatic/schema "1.4.1"]
+                                    [clojure.java-time "1.4.2"]
+                                    [hashp "0.2.2"]]
 
                    :injections     [(require 'hashp.core)]
 

@@ -5,7 +5,13 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
-## 2.1.1 - 2024-11-03
+## 2.1.2 - 2024-11-05
+
+### Changed
+
+- Separate main dependencies and test dependencies in the `project.clj` file.
+
+## 2.1.1 - 2024-11-04
 
 ### Removed
 
