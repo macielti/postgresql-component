@@ -42,7 +42,12 @@
                                                         ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
                                                         ["migrate-all"]
                                                         ["test"]
-                                                        ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "down"]]}
+                                                        ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "down"]]
+                                    "auto-test-remote" ["do"
+                                                        ["shell" "docker" "compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
+                                                        ["migrate-all"]
+                                                        ["test"]
+                                                        ["shell" "docker" "compose" "-f" "test/resources/docker-compose.yml" "down"]]}
                    :repl-options   {:init-ns postgresql-component.core}}}
 
   :repl-options {:init-ns postgresql-component.core}
