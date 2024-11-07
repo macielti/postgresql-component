@@ -1,7 +1,7 @@
 (ns postgresql-component.core
-  (:require [integrant.core :as ig]
-            [pg.pool]
-            [clojure.tools.logging :as log]))
+  (:require [clojure.tools.logging :as log]
+            [integrant.core :as ig]
+            [pg.pool]))
 
 (defmethod ig/init-key ::postgresql
   [_ {:keys [components]}]
