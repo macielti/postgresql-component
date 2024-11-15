@@ -1,3 +1,5 @@
+![Compatible with GraalVM](https://img.shields.io/badge/compatible_with-GraalVM-green)
+
 # PostgreSQL Component
 
 PostgreSQL Component is a library that provides a PostgreSQL component for use with the Integrant library.
