@@ -1,4 +1,5 @@
 ![Compatible with GraalVM](https://img.shields.io/badge/compatible_with-GraalVM-green)
+[![Clojars Project](https://img.shields.io/clojars/v/net.clojars.macielti/postgresql-component.svg)](https://clojars.org/net.clojars.macielti/postgresql-component)
 
 # PostgreSQL Component
 
