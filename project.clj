@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/postgresql-component "2.2.3"
+(defproject net.clojars.macielti/postgresql-component "2.2.4"
 
   :description "PostgreSQL Component"
 
@@ -13,7 +13,7 @@
 
   :dependencies [[org.clojure/clojure "1.12.0"]
                  [io.pedestal/pedestal.interceptor "0.7.2"]
-                 [com.github.igrishaev/pg2-core "0.1.32"]
+                 [com.github.igrishaev/pg2-core "0.1.33"]
                  [org.clojure/tools.logging "1.3.0"]
                  [integrant "0.13.1"]]
 
@@ -21,7 +21,7 @@
 
                    :test-paths     ^:replace ["test/unit" "test/integration" "test/helpers"]
 
-                   :dependencies   [[com.github.igrishaev/pg2-migration "0.1.32"]
+                   :dependencies   [[com.github.igrishaev/pg2-migration "0.1.33"]
                                     [nubank/matcher-combinators "3.9.1"]
                                     [org.slf4j/slf4j-api "2.0.16"]
                                     [ch.qos.logback/logback-classic "1.5.16"]
