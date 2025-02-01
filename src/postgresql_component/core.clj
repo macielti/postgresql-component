@@ -1,16 +1,16 @@
 (ns postgresql-component.core
   (:require [clojure.tools.logging :as log]
             [integrant.core :as ig]
-            [pg.pool]))
+            [pg.core]))
 
 (defmethod ig/init-key ::postgresql
   [_ {:keys [components]}]
   (log/info :starting ::postgresql)
   (let [postgresql-config (-> components :config :postgresql)
-        pool (pg.pool/pool postgresql-config)]
+        pool (pg.core/pool postgresql-config)]
     pool))
 
 (defmethod ig/halt-key! ::postgresql
   [_ pool]
   (log/info :stopping ::postgresql)
-  (pg.pool/close pool))
+  (pg.core/close pool))

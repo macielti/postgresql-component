@@ -1,1 +1,1 @@
-{:lint-as {pg.pool/with-connection clojure.core/let}}
+{:lint-as {pg.core/with-connection clojure.core/let}}

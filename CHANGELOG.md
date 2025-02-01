@@ -9,6 +9,12 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ### Changed
 
+- Fix deprecation warnings.
+
+## 2.2.4 - 2025-02-01
+
+### Changed
+
 - Update dependencies.
 
 ## 2.2.3 - 2025-01-29

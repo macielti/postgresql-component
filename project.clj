@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/postgresql-component "2.2.4"
+(defproject net.clojars.macielti/postgresql-component "2.2.5"
 
   :description "PostgreSQL Component"
 

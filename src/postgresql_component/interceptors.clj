@@ -1,7 +1,6 @@
 (ns postgresql-component.interceptors
   (:require [io.pedestal.interceptor :as pedestal.interceptor]
             [pg.core :as pg]
-            [pg.pool :as pool]
             [schema.core :as s]))
 
 (s/defn http-friendly-exception
@@ -25,7 +24,7 @@
                                      :enter (fn [{{:keys [components]} :request :as context}]
                                               (let [pool (:postgresql components)
                                                     resource-identifier (resource-identifier-fn context)
-                                                    resource (-> (pool/with-connection [database-conn pool]
+                                                    resource (-> (pg/with-connection [database-conn pool]
                                                                    (pg/execute database-conn sql-query {:params [resource-identifier]})) first)]
                                                 (when-not resource
                                                   (http-friendly-exception 404
