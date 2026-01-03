@@ -1,7 +1,7 @@
 (ns postgresql-component.migrations
-  (:require [pg.migration.core :as migrations]
-            [clojure.tools.logging :as log]
-            [integrant.core :as ig]))
+  (:require [clojure.tools.logging :as log]
+            [integrant.core :as ig]
+            [pg.migration.core :as migrations]))
 
 (defmethod ig/init-key ::postgresql-migrations
   [_ {:keys [components]}]
