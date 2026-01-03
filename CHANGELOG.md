@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions
 of [keepachangelog.com](http://keepachangelog.com/).
 
+## 2.3.6 - 2026-01-02
+
+### Changed
+
+- Add missing dependency.
+
 ## 2.3.5 - 2026-01-02
 
 ### Added
