@@ -7,24 +7,24 @@
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
 
-  :plugins [[com.github.clojure-lsp/lein-clojure-lsp "1.4.16"]
+  :plugins [[com.github.clojure-lsp/lein-clojure-lsp "2.0.13"]
             [com.github.liquidz/antq "RELEASE"]
             [lein-shell "0.5.0"]]
 
-  :dependencies [[org.clojure/clojure "1.12.0"]
-                 [io.pedestal/pedestal.interceptor "0.7.2"]
-                 [com.github.igrishaev/pg2-core "0.1.33"]
-                 [org.clojure/tools.logging "1.3.0"]
-                 [integrant "0.13.1"]]
+  :dependencies [[org.clojure/clojure "1.12.4"]
+                 [io.pedestal/pedestal.interceptor "0.8.1"]
+                 [com.github.igrishaev/pg2-core "0.1.41"]
+                 [org.clojure/tools.logging "1.3.1"]
+                 [integrant "1.0.1"]]
 
   :profiles {:dev {:resource-paths ^:replace ["test/resources"]
 
                    :test-paths     ^:replace ["test/unit" "test/integration" "test/helpers"]
 
-                   :dependencies   [[com.github.igrishaev/pg2-migration "0.1.33"]
-                                    [nubank/matcher-combinators "3.9.1"]
-                                    [org.slf4j/slf4j-api "2.0.16"]
-                                    [ch.qos.logback/logback-classic "1.5.16"]
+                   :dependencies   [[com.github.igrishaev/pg2-migration "0.1.41"]
+                                    [nubank/matcher-combinators "3.9.2"]
+                                    [org.slf4j/slf4j-api "2.0.17"]
+                                    [ch.qos.logback/logback-classic "1.5.23"]
                                     [prismatic/schema "1.4.1"]
                                     [clojure.java-time "1.4.3"]
                                     [hashp "0.2.2"]]
