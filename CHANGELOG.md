@@ -3,9 +3,13 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions
 of [keepachangelog.com](http://keepachangelog.com/).
 
-## Unreleased
+## 2.3.5 - 2026-01-02
 
-## 2.2.4 - 2025-02-01
+### Added
+
+- Implement migrations component.
+
+## 2.2.5 - 2025-02-01
 
 ### Changed
 
