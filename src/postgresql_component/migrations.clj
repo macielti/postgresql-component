@@ -12,6 +12,5 @@
     (migrations/migrate-all configuration)))
 
 (defmethod ig/halt-key! ::postgresql-migrations
-  [_ pool]
-  (log/info :stopping ::postgresql-migrations)
-  (pg.core/close pool))
+  [_ _]
+  (log/info :stopping ::postgresql-migrations))
