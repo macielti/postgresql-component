@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions
 of [keepachangelog.com](http://keepachangelog.com/).
 
+## 2.3.7 - 2026-02-08
+
+### Changed
+
+- Deprecating `net.clojars.macielti/postgresql-component` in favor of `net.clojars.macielti/postgresql`
+
 ## 2.3.6 - 2026-01-02
 
 ### Changed
