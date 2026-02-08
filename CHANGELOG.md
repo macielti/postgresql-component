@@ -5,5 +5,7 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## 3.0.0 - 2026-02-08
 
+### Changed
+
 - Reset version counting to a fresh start.
 - Renamed project to `net.clojars.macielti/postgresql`. 
