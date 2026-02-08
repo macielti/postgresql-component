@@ -14,5 +14,5 @@ pom.xml.asc
 /.idea/
 /.clj-kondo/.cache/
 /.lsp/.cache/
-postgresql-component.iml
 /.clj-kondo/imports/
+/postgresql.iml

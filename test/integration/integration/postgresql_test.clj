@@ -1,10 +1,10 @@
-(ns postgresql-component-test
+(ns integration.postgresql-test
   (:require [clojure.test :refer [is testing]]
             [integrant.core :as ig]
             [java-time.api :as jt]
             [matcher-combinators.test :refer [match?]]
             [pg.core :as pg]
-            [postgresql-component.core :as component.postgresql]
+            [postgresql.component :as component.postgresql]
             [schema.test :as s])
   (:import (org.pg Pool)))
 
@@ -16,11 +16,11 @@
 
 (s/deftest postgresql-integrant-component-test
   (let [system (ig/init config)
-        pool (:postgresql-component.core/postgresql system)
+        pool (::component.postgresql/postgresql system)
         now (jt/local-date)]
 
     (testing "Should be able to init a system with PostgreSQL component"
-      (is (match? {:postgresql-component.core/postgresql #(= (type %) Pool)}
+      (is (match? {::component.postgresql/postgresql #(= (type %) Pool)}
                   system)))
 
     (testing "Should be able to use the initiated PostgreSQL component to perform database operations"

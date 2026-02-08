@@ -1,4 +1,4 @@
-(ns postgresql-component.interceptors
+(ns postgresql.interceptors
   (:require [io.pedestal.interceptor :as pedestal.interceptor]
             [pg.core :as pg]
             [schema.core :as s]))

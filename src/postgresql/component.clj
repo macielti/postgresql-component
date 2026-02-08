@@ -1,4 +1,4 @@
-(ns postgresql-component.core
+(ns postgresql.component
   (:require [clojure.tools.logging :as log]
             [integrant.core :as ig]
             [pg.core]))

@@ -1,8 +1,8 @@
-(defproject net.clojars.macielti/postgresql-component "2.3.7"
+(defproject net.clojars.macielti/postgresql "3.0.0"
 
-  :description "DEPRECATED - PostgreSQL Component - Use net.clojars.macielti/postgresql instead."
+  :description "PostgreSQL Component"
 
-  :url "https://github.com/macielti/postgresql-component"
+  :url "https://github.com/macielti/postgresql"
 
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
@@ -20,33 +20,35 @@
 
   :resource-paths ["resources"]
 
-  :profiles {:dev {:test-paths   ["test/unit" "test/integration" "test/helpers"]
+  :profiles {:dev {:test-paths     ["test/unit" "test/integration" "test/helpers"]
 
-                   :dependencies [[nubank/matcher-combinators "3.9.2"]
-                                  [org.slf4j/slf4j-api "2.0.17"]
-                                  [ch.qos.logback/logback-classic "1.5.23"]
-                                  [prismatic/schema "1.4.1"]
-                                  [clojure.java-time "1.4.3"]
-                                  [hashp "0.2.2"]]
+                   :resource-paths ["test/resources"]
 
-                   :injections   [(require 'hashp.core)]
+                   :dependencies   [[nubank/matcher-combinators "3.9.2"]
+                                    [org.slf4j/slf4j-api "2.0.17"]
+                                    [ch.qos.logback/logback-classic "1.5.23"]
+                                    [prismatic/schema "1.4.1"]
+                                    [clojure.java-time "1.4.3"]
+                                    [hashp "0.2.2"]]
 
-                   :aliases      {"clean-ns"         ["clojure-lsp" "clean-ns" "--dry"] ;; check if namespaces are clean
-                                  "format"           ["clojure-lsp" "format" "--dry"] ;; check if namespaces are formatted
-                                  "diagnostics"      ["clojure-lsp" "diagnostics"]
-                                  "lint"             ["do" ["clean-ns"] ["format"] ["diagnostics"]]
-                                  "clean-ns-fix"     ["clojure-lsp" "clean-ns"]
-                                  "format-fix"       ["clojure-lsp" "format"]
-                                  "lint-fix"         ["do" ["clean-ns-fix"] ["format-fix"]]
-                                  "migrate-all"      ["run" "-m" "pg.migration.cli" "-c" "test/resources/migration.config.edn" "migrate" "--all"]
-                                  "auto-test"        ["do"
-                                                      ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
-                                                      ["migrate-all"]
-                                                      ["test"]
-                                                      ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "down"]]
-                                  "auto-test-remote" ["do"
-                                                      ["shell" "docker" "compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
-                                                      ["migrate-all"]
-                                                      ["test"]
-                                                      ["shell" "docker" "compose" "-f" "test/resources/docker-compose.yml" "down"]]}
-                   :repl-options {:init-ns postgresql-component.core}}})
+                   :injections     [(require 'hashp.core)]
+
+                   :aliases        {"clean-ns"         ["clojure-lsp" "clean-ns" "--dry"] ;; check if namespaces are clean
+                                    "format"           ["clojure-lsp" "format" "--dry"] ;; check if namespaces are formatted
+                                    "diagnostics"      ["clojure-lsp" "diagnostics"]
+                                    "lint"             ["do" ["clean-ns"] ["format"] ["diagnostics"]]
+                                    "clean-ns-fix"     ["clojure-lsp" "clean-ns"]
+                                    "format-fix"       ["clojure-lsp" "format"]
+                                    "lint-fix"         ["do" ["clean-ns-fix"] ["format-fix"]]
+                                    "migrate-all"      ["run" "-m" "pg.migration.cli" "-c" "test/resources/migration.config.edn" "migrate" "--all"]
+                                    "auto-test"        ["do"
+                                                        ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
+                                                        ["migrate-all"]
+                                                        ["test"]
+                                                        ["shell" "docker-compose" "-f" "test/resources/docker-compose.yml" "down"]]
+                                    "auto-test-remote" ["do"
+                                                        ["shell" "docker" "compose" "-f" "test/resources/docker-compose.yml" "up" "-d"]
+                                                        ["migrate-all"]
+                                                        ["test"]
+                                                        ["shell" "docker" "compose" "-f" "test/resources/docker-compose.yml" "down"]]}
+                   :repl-options   {:init-ns postgresql.component}}})

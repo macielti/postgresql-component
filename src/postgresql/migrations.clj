@@ -1,4 +1,4 @@
-(ns postgresql-component.migrations
+(ns postgresql.migrations
   (:require [clojure.tools.logging :as log]
             [integrant.core :as ig]
             [pg.migration.core :as migrations]))
