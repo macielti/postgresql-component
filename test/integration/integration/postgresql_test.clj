@@ -5,8 +5,8 @@
             [matcher-combinators.test :refer [match?]]
             [pg.core :as pg]
             [postgresql.component :as component.postgresql]
-            [schema.test :as s])
-  (:import (org.pg Pool)))
+            [schema.core :as s]
+            [schema.test :as schema.test]))
 
 (def config {::component.postgresql/postgresql {:components {:config {:postgresql {:host     "localhost"
                                                                                    :port     5432
@@ -14,13 +14,13 @@
                                                                                    :password "root"
                                                                                    :database "postgres-db"}}}}})
 
-(s/deftest postgresql-integrant-component-test
+(schema.test/deftest postgresql-integrant-component-test
   (let [system (ig/init config)
         pool (::component.postgresql/postgresql system)
         now (jt/local-date)]
 
     (testing "Should be able to init a system with PostgreSQL component"
-      (is (match? {::component.postgresql/postgresql #(= (type %) Pool)}
+      (is (match? {::component.postgresql/postgresql #(s/validate component.postgresql/PostgreSQLPool %)}
                   system)))
 
     (testing "Should be able to use the initiated PostgreSQL component to perform database operations"
