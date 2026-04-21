@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/postgresql "3.1.0"
+(defproject net.clojars.macielti/postgresql "3.2.0"
 
   :description "PostgreSQL Component"
 
@@ -17,7 +17,8 @@
                  [com.github.igrishaev/pg2-migration "0.1.48"]
                  [org.clojure/tools.logging "1.3.1"]
                  [integrant "1.0.1"]
-                 [prismatic/schema "1.4.1"]]
+                 [prismatic/schema "1.4.1"]
+                 [diehard "0.12.0"]]
 
   :resource-paths ["resources"]
 
