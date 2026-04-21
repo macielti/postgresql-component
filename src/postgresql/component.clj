@@ -1,5 +1,6 @@
 (ns postgresql.component
   (:require [clojure.tools.logging :as log]
+            [diehard.core :as dh]
             [integrant.core :as ig]
             [pg.core])
   (:import (org.pg Pool)))
@@ -10,7 +11,12 @@
   [_ {:keys [components]}]
   (log/info :starting ::postgresql)
   (let [postgresql-config (-> components :config :postgresql)
-        pool (pg.core/pool postgresql-config)]
+        pool (dh/with-retry {:max-retries 3
+                             :backoff-ms  [1000 15000]
+                             :retry-on    Exception
+                             :on-retry    (fn [_ _]
+                                            (log/warn :retrying-postgresql-pool))}
+               (pg.core/pool postgresql-config))]
     pool))
 
 (defmethod ig/halt-key! ::postgresql
